@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import org.junit.Test;
 
 public class ReservaTest {
-/*	
+
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
 	private static final String nombreProfesor = "José Ramón";
@@ -125,5 +125,5 @@ public class ReservaTest {
 				+ ", aula=[nombre=Salón de actos], permanencia=[dia=01/12/2018, tramo=Mañana]]";
 		assertEquals(cadenaEsperada, reserva.toString());
 	}
-*/
+
 }
