@@ -45,7 +45,7 @@ public class Aulas {
     }
 
     public void insertar(Aula aula) throws OperationNotSupportedException {
-        // Comprobamos que no sea nula la cita
+        // Comprobamos que no sea nula el aula
         if (aula == null)
             throw new NullPointerException("ERROR: No se puede insertar un aula nula.");
 
@@ -54,7 +54,7 @@ public class Aulas {
         if (capacidadSuperada(tamano))
             throw new OperationNotSupportedException("ERROR: No se aceptan más aulas.");
 
-        // Comprobamos que no existe esa cita
+        // Comprobamos que no existe ese aula
         if (!tamanoSuperado(buscarIndice(aula)))
             throw new OperationNotSupportedException("ERROR: Ya existe un aula con ese nombre.");
 
@@ -94,7 +94,7 @@ public class Aulas {
     }
 
     public void borrar(Aula aula) throws OperationNotSupportedException {
-// Comprobamos que no sea nula
+        // Comprobamos que no sea nula
         if (aula == null)
             throw new IllegalArgumentException("ERROR: No se puede borrar un aula nula.");
 
@@ -120,7 +120,6 @@ public class Aulas {
     }
 
     public String[] representar() {
-        int lon = coleccionAulas.length;
         String[] representacion = new String[coleccionAulas.length];
         for (int i = 0; i < coleccionAulas.length - 1; i++) {
             representacion[i] = coleccionAulas[i].toString();

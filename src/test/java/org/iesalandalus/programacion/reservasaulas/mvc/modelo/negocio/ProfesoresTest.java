@@ -14,10 +14,11 @@ import static org.junit.Assert.fail;
 import javax.naming.OperationNotSupportedException;
 
 
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.junit.Test;
 
 public class ProfesoresTest {
-/*	
+
 	private static final String NOMBRE_PROFESOR1 = "José Ramón";
 	private static final String NOMBRE_PROFESOR2 = "Andrés";
 	private static final String NOMBRE_PROFESOR3 = "Begoña";
@@ -365,5 +366,5 @@ public class ProfesoresTest {
 		}
 		
 	}
-*/
+
 }
