@@ -9,10 +9,11 @@ import static org.junit.Assert.*;
 import javax.naming.OperationNotSupportedException;
 
 
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
 import org.junit.Test;
 
 public class AulasTest {
-/*	
+
 	private static final String NOMBRE_SALON1 = "Salón 1";
 	private static final String NOMBRE_SALON2 = "Salón 2";
 	private static final String NOMBRE_SALON3 = "Salón 3";
@@ -357,5 +358,5 @@ public class AulasTest {
 		}
 		
 	}
-*/
+
 }
