@@ -115,11 +115,18 @@ public class Profesores {
         tamano--;
     }
 
-    public String[] representar() {
+    public String[] representar() throws OperationNotSupportedException {
         String[] representacion = new String[coleccionProfesores.length];
-        for (int i = 0; i < coleccionProfesores.length - 1; i++) {
-            representacion[i] = coleccionProfesores[i].toString();
+
+        int i = 0;
+        for (Profesor profesor : coleccionProfesores) {
+            if (profesor == null)
+                throw new OperationNotSupportedException("profesor nulo");
+            representacion[i] = profesor.toString();
+            i++;
         }
+
+
         return representacion;
     }
 }

@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio;
 
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.Arrays;
@@ -119,13 +120,19 @@ public class Aulas {
         tamano--;
     }
 
-    public String[] representar() {
+    public String[] representar() throws OperationNotSupportedException {
         String[] representacion = new String[coleccionAulas.length];
-        for (int i = 0; i < coleccionAulas.length - 1; i++) {
-            representacion[i] = coleccionAulas[i].toString();
-        }
-        return representacion;
 
+        int i = 0;
+        for (Aula aula : coleccionAulas) {
+            if (aula == null)
+                throw new OperationNotSupportedException("aula nula");
+            representacion[i] = aula.toString();
+            i++;
+        }
+
+
+        return representacion;
     }
 
     @Override
