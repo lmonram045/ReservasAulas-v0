@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio;
 
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Permanencia;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
 
@@ -121,5 +123,73 @@ public class Reservas {
             representacion[i] = coleccionReservas[i].toString();
         }
         return representacion;
+    }
+
+    public Reserva[] getReservasProfesor(Profesor profesor) {
+        if (profesor == null)
+            throw new NullPointerException("ERROR: El profesor no puede ser nulo.");
+
+        // Array para guardar salida auxiliar de reservas
+        Reserva[] auxiliarReserva = new Reserva[capacidad];
+        // Variable para controlar el array auxiliar creado anteriormente
+        int i = 0;
+        for (Reserva reserva : coleccionReservas) {
+            if (reserva != null && reserva.getProfesor().equals(profesor)) {
+                auxiliarReserva[i] = reserva;
+                i++;
+            }
+        }
+        return auxiliarReserva;
+    }
+
+    public Reserva[] getReservasAula(Aula aula) {
+        if (aula == null)
+            throw new NullPointerException("ERROR: El aula no puede ser nula.");
+
+        // Array para guardar salida auxiliar de reservas
+        Reserva[] auxiliarReserva = new Reserva[capacidad];
+        // Variable para controlar el array auxiliar creado anteriormente
+        int i = 0;
+        for (Reserva reserva : coleccionReservas) {
+            if (reserva != null && reserva.getAula().equals(aula)) {
+                auxiliarReserva[i] = reserva;
+                i++;
+            }
+        }
+        return auxiliarReserva;
+    }
+
+    public Reserva[] getReservasPermanencia(Permanencia permanencia) {
+        if (permanencia == null)
+            throw new NullPointerException("ERROR: La permanencia no puede ser nula.");
+
+        // Array para guardar salida auxiliar de reservas
+        Reserva[] auxiliarReserva = new Reserva[capacidad];
+        // Variable para controlar el array auxiliar creado anteriormente
+        int i = 0;
+        for (Reserva reserva : coleccionReservas) {
+            if (reserva != null && reserva.getPermanencia().equals(permanencia)) {
+                auxiliarReserva[i] = reserva;
+                i++;
+            }
+        }
+        return auxiliarReserva;
+    }
+
+    public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) {
+        if (aula == null)
+            throw new IllegalArgumentException("No se puede consultar la disponibilidad de un aula nula.");
+
+        if (permanencia == null)
+            throw new IllegalArgumentException("No se puede consultar la disponibilidad de una permanencia nula.");
+
+        for (int i = 0; i < coleccionReservas.length; i++) {
+            if (aula == coleccionReservas[i].getAula() && permanencia == coleccionReservas[i].getPermanencia())
+                return false;
+
+            return true;
+        }
+
+        return true;
     }
 }

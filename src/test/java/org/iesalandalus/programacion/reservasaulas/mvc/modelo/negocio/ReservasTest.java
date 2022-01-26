@@ -17,10 +17,11 @@ import java.time.LocalDate;
 import javax.naming.OperationNotSupportedException;
 
 
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.*;
 import org.junit.Test;
 
 public class ReservasTest {
-/*	
+
 	private static final String RESERVAS_NO_CREADAS = "Debería haber creado las reservas correctamente.";
 	private static final String TAMANO_NO_ESPERADO = "El tamaño devuelto no es el esperado.";
 	private static final String OPERACION_NO_PERMITIDA = "Debería haber saltado una excepción indicando que dicha operación no está permitida.";
@@ -521,5 +522,5 @@ public class ReservasTest {
 			assertEquals("No se puede consultar la disponibilidad de una permanencia nula.", e.getMessage());
 		}
 	}
-*/
+
 }
