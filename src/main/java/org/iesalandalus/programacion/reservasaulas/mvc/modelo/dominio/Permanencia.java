@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Permanencia {
     private LocalDate dia;
-    private static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/yyyy");;
+    private static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private Tramo tramo;
 
     public Permanencia(LocalDate dia, Tramo tramo) {
